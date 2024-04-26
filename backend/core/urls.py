@@ -23,4 +23,7 @@ urlpatterns = [
     # Include other apps api urls from core.api.urls
     path('api/', include('core.api.urls')),
 
+    # Include Localizer app urls
+    path('i18n/', include('django.conf.urls.i18n')),
+
 ]
