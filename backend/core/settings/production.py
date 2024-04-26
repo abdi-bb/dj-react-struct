@@ -20,7 +20,7 @@ DATABASES = {
     }
 }
 
-# Caching(No need to cache in development)
+# Caching(No need of caching in development)
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
