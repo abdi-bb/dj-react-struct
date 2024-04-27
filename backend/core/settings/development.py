@@ -1,5 +1,8 @@
 from .base import *
 
+# CORS allowed origins
+CORS_ALLOW_ALL_ORIGINS = True
+
 # Email
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -9,11 +12,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "../", "media")
 
 STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "../", "static")
-
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR.parent / 'db.sqlite3',
-    }
-}
