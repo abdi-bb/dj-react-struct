@@ -16,7 +16,7 @@ services:
       - redis
       - db
   db:
-    image: postgres:13
+    image: postgres:latest
     restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -26,7 +26,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
 
   redis:
-    image: redis:7
+    image: redis:latest
 
   celery:
     build: .

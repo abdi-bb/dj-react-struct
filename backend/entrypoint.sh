@@ -1,13 +1,15 @@
 #!/bin/sh
 
-# Uncomment for production
-echo 'Waiting for postgres...'
+# Check if DEBUG is set to False (production environment)
+if [ -n "$DEBUG" ] && [ "$DEBUG" != "True" ]; then
+    echo 'Waiting for postgres...'
 
-while ! nc -z $DB_HOSTNAME $DB_PORT; do
-    sleep 0.1
-done
+    while ! nc -z $DB_HOSTNAME $DB_PORT; do
+        sleep 0.1
+    done
 
-echo 'PostgreSQL started'
+    echo 'PostgreSQL started'
+fi
 
 echo 'Running migrations...'
 python manage.py migrate
