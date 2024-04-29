@@ -22,7 +22,7 @@ services:
   #     - POSTGRES_PASSWORD=${DB_PASSWORD}
   #     - POSTGRES_DB=${DB_NAME}
   redis:
-    image: redis:7
+    image: redis:latest
 
   celery:
     build: .
